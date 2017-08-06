@@ -10,7 +10,7 @@ var img = document.getElementById('madi');
 var marginLeft = 0;
 function moveRight()
 {
-    marginLeft = marginLeft + 10;
+    marginLeft = marginLeft + 1;
     img.style.marginLeft = marginLeft + 'px';
     
 }
@@ -20,7 +20,7 @@ function moveRight()
 img.onclick = function(){
   
   // changing the CSS from Java Script
-  var interval = setInterval(moveRight,100);
+  var interval = setInterval(moveRight,50);
  // img.style.marginLeft = '100px';
   
  };
