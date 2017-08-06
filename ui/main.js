@@ -20,7 +20,7 @@ function moveRight()
 img.onclick = function(){
   
   // changing the CSS from Java Script
-  var interval = setInterval(moveLeft,100);
+  var interval = setInterval(moveRight,100);
  // img.style.marginLeft = '100px';
   
  };
