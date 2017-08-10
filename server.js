@@ -104,9 +104,11 @@ app.get('/:articleName', function (req , res){
     
 });
 
-app.get('/ui/favicon.ico', function (req, res) {
-res.sendFile(path.join(__dirname, 'ui', 'favicon.ico'));
-});
+//app.get('/ui/favicon.ico', function (req, res) {
+//res.sendFile(path.join(__dirname, 'ui', 'favicon.ico'));
+//});
+
+app.use('/ui',express.static(path.join(__dirname,'ui'));
 
 app.get('/article-two',function (req , res){
      res.sendFile(path.join(__dirname, 'ui', 'article-two.html'));
