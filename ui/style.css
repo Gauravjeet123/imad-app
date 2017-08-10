@@ -1,3 +1,18 @@
+div {
+	border-radius: 5px;
+}
+
+#header {
+	z-index: 1;
+	position: fixed;
+	width: 97.5%;
+	margin-top: -20px;
+	height: 60px;
+	background-color: #668284;
+	margin-bottom: 10px;
+}
+
+
 body {
     font-family: sans-serif;
     background-color: #f3f3f3;
