@@ -53,7 +53,7 @@ span.innerHTML = counter.toString();
 };
 
 //make a request
-request.open('GET','http://girijaiyer1996.imad.hasura-app.io/counter',true);
+request.open('GET','http://gauravjeetchhabra.imad.hasura-app.io/counter',true);
 request.send(null);
 
 };
