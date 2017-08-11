@@ -75,7 +75,7 @@ if(request.readyState == XMLHttpRequest.DONE)
 if(request.status==200)
 {
 //capture a list of names and render it as a list
-var names = ['name1','name2','name3','name4']  //request.responseText;
+var names = ['name1','name2','name3','name4'];  //request.responseText;
 //names = JSON.parse(names);
 var list = '';
 for(var i=0;i< names.length; i++)
@@ -94,3 +94,4 @@ ul.innerHTML = list;
 // request.open('GET','http://gauravjeetchhabra.imad.hasura-app.io/submit-name?name='+ n,true);
 // request.send(null);
 // };
+};
