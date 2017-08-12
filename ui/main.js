@@ -26,13 +26,16 @@ request.send(null);
 // var name = nameInput.value;
 var submit = document.getElementById('submit_btn');
 submit.onclick = function () {
-var request = new XMLHttpRequest();
-request.onreadystatechange = function () 
-{
-    if(request.readyState == XMLHttpRequest.DONE)
+    //create a request
+        var request = new XMLHttpRequest();
+        
+        //capture the response nd store it in a variable
+        request.onreadystatechange = function () {
+    if(request.readyState === XMLHttpRequest.DONE)
     {
      if(request.status === 200)
         {
+            
             var names =request.responseText;
             names = JSON.parse(); // converting from string back into an object/array
              var list = '';
@@ -56,7 +59,7 @@ var name = nameInput.value;
 request.open('GET','http://gauravjeetchhabra.imad.hasura-app.io/submit-name?name=' +name, true);
 request.send(null);
 
-};
+
 
 //submit name
 
