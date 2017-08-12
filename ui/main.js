@@ -37,7 +37,7 @@ submit.onclick = function () {
         {
             
             var names =request.responseText;
-            names = JSON.parse(); // converting from string back into an object/array
+            names = JSON.parse(names); // converting from string back into an object/array
              var list = '';
             for(var i=0; i< names.length; i++)
             {
