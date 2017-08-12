@@ -151,9 +151,9 @@ app.get('/ui/main.js', function (req, res) {
 });
 
 var names= [];
-app.get('/submit-name/:name', function(req, res){
+app.get('/submit-name', function(req, res){
     //get the name from request object
-    var name = req.params.name;
+    var name = req.query.name;
     
     // ONCE we extract the name value we will concatenate the name value to the overall list of name
     names.push(name);
