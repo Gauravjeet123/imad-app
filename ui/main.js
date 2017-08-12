@@ -62,7 +62,6 @@ request.send(null);
 
 var nameInput = document.getElementById('name');
 var name = nameInput.value;
-
 var submit = document.getElementById('submit_btn');
 submit.onclick = function () {
 
@@ -70,22 +69,22 @@ submit.onclick = function () {
 var request = new XMLHttpRequest();
 request.onreadystatechange = function () 
 {
-if(request.readyState == XMLHttpRequest.DONE)
-{
-if(request.status==200)
-{
+// if(request.readyState == XMLHttpRequest.DONE)
+// {
+// if(request.status==200)
+// {
 //capture a list of names and render it as a list
 var names = ['name1','name2','name3','name4'];  //request.responseText;
 //names = JSON.parse(names);
 var list = '';
 for(var i=0;i< names.length; i++)
 {
-list +='' + names[i] + '';
+list +='<li>' + names[i] + '</li>';
 }
 var ul = document.getElementById('namelist');
 ul.innerHTML = list;
-}
-}
+//}
+//}
 //not yet done - no action reqd
 };
 //make a request
