@@ -6,6 +6,12 @@ button.onclick = function() {
 
 //create a request to counter endpoint
 
+//submit name
+
+var nameInput = document.getElementById('name');
+var name = nameInput.value;
+var submit = document.getElementById('submit_btn');
+submit.onclick = function () {
 var request = new XMLHttpRequest();
 request.onreadystatechange = function () 
 {
@@ -13,16 +19,25 @@ request.onreadystatechange = function ()
     {
      if(request.status === 200)
         {
-            var counter = request.responseText;
-            var span = document.getElementById('count');
-            span.innerHTML = counter.toString();
+            var names =request.responseText;
+            names = JSON.parse(); // converting from string back into an object/array
+             var list = '';
+            for(var i=0; i< names.length; i++)
+            {
+                list +='<li>' + names[i] + '</li>';
+            }
+            var ul = document.getElementById('namelist');
+            ul.innerHTML = list;
+            // var counter = request.responseText;
+            // var span = document.getElementById('count');
+            // span.innerHTML = counter.toString();
         }
     }
     //not yet done - no action reqd
 };
 
 //make a request
-request.open('GET','http://gauravjeetchhabra.imad.hasura-app.io/counter',true);
+request.open('GET','http://gauravjeetchhabra.imad.hasura-app.io/submit-name?name=' +name, true);
 request.send(null);
 
 };
@@ -43,15 +58,15 @@ submit.onclick = function () {
 //       if(request.status==200)
 //       {
 //capture a list of names and render it as a list
-        var names = ['name1','name2','name3','name4'];  //request.responseText;
+        //var names = ['name1','name2','name3','name4'];  //request.responseText;
 //names = JSON.parse(names);
-        var list = '';
-        for(var i=0; i< names.length; i++)
-        {
-            list +='<li>' + names[i] + '</li>';
-        }
-            var ul = document.getElementById('namelist');
-            ul.innerHTML = list;
+        // var list = '';
+        // for(var i=0; i< names.length; i++)
+        // {
+        //     list +='<li>' + names[i] + '</li>';
+        // }
+        //     var ul = document.getElementById('namelist');
+        //     ul.innerHTML = list;
       //}
     //}
         //not yet done - no action reqd
