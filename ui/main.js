@@ -77,4 +77,4 @@ request.send(null);
 // request.open('GET','http://gauravjeetchhabra.imad.hasura-app.io/submit-name?name='+ n,true);
 // request.send(null);
 // };
-};
+// };
