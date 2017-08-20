@@ -22,8 +22,7 @@ var articles = {
     date : 'Aug 05, 2017',
     content :`<p>
                 This is the content of my first article. This is the content of my first article
-                 
-            </p>`
+                 </p>`
 },
 'article-two' : {
     title : 'Article Two | Gauravjeet',
