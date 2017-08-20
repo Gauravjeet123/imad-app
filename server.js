@@ -100,9 +100,9 @@ app.get('/test', function (req, res){
     //return a response with the result
     pool.query('SELECT * FROM test', function(err, result){
        if(err){
-           res.status(500).send(err.toString());
+           res.status(500).send(err.toString()); // make the error available
        } else {
-           res.send(JSON.stringify(result));
+           res.send(JSON.stringify(result.rows));
        }
     });
     
