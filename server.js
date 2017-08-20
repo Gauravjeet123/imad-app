@@ -159,7 +159,11 @@ app.get('/articles/:articleName', function (req , res){
     
     //articleName == article-one
     // articles[articleName] == {} content object for article one
-    pool.query("SELECT * FROM article WHERE title = '" + req.params.articleName+"'", function(err,result){
+    
+    //SELECT * FROM article WHERE title= '\';DELETE WHERE a= \'
+    // every good libraries provide a way to insert PARAMETER INSIDE OUR SQL QUERY in a way that PARAMETER is safe 
+   // pool.query("SELECT * FROM article WHERE title = '" + req.params.articleName+"'", function(err,result){
+        pool.query("SELECT * FROM article WHERE title = $1",[req.params.articleName],function(err,result){
        if(err){
            res.status(500).send(err.toString());
        } else{
