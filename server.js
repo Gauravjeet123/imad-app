@@ -98,7 +98,7 @@ var pool = new Pool(config);
 app.get('/test', function (req, res){
     //make a select request
     //return a response with the result
-    pool.query('SELECT * FROM test', function(err, result){
+    pool.query('SELECT * FROM test', function(err, results){
        if(err){
            res.status(500).send(err.toString());
        } else {
