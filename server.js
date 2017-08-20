@@ -20,7 +20,7 @@ var articles = {
 'article-one': {
      title : 'Article one | Gauravjeet',
     heading : 'Article one',
-    date : 'Aug 05, 2017',
+    date : 'Aug 17, 2017',
     content :`<p>
                 This is the content of my first article. This is the content of my first article
                  </p>`
@@ -28,7 +28,7 @@ var articles = {
 'article-two' : {
     title : 'Article Two | Gauravjeet',
     heading : 'Article two',
-    date : 'August 5, 2017',
+    date : 'August 20, 2017',
     content :`<p>
                 This is the content of my second article. This is the content of my  article
                  
@@ -76,6 +76,7 @@ var htmlTemplate = `
         <div>
             ${date.toDateString()}
         </div>
+        
         <div>
            ${content}
         </div>
