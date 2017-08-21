@@ -100,7 +100,12 @@ res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 function hash (input,salt){
     //How do we create a hash ?
     var hashed =crypto.pbkdf2Sync(input, salt, 10000, 512,'sha512');
-    return hashed.toString('hex');
+    return["pbkdf2","10000",salt,hashed.toString('hex')].join('$');
+    
+    //algorithm : md5
+    //"password" ==> 98df74d3ad7777485f80e6fd51e5ada
+    //"password-this-is-some-random-string" ==> 11e2d618bfb7ce20c7b6091f5566b53663ce39d
+    //"password" ==>"password-this-is-a-salt" ==> <hash> ==<hash> * 10k times
     
     
 }
