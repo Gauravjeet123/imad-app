@@ -16,15 +16,15 @@ var app = express();
 app.use(morgan('combined'));
 
 
-// var articles = {
-'article-one': {
-     title : 'Article one | Gauravjeet',
-    heading : 'Article one',
-    date : 'Aug 17, 2017',
-    content :`<p>
-                This is the content of my first article. This is the content of my first article
-                 </p>`
-},
+var articles = {
+// 'article-one': {
+//      title : 'Article one | Gauravjeet',
+//     heading : 'Article one',
+//     date : 'Aug 17, 2017',
+//     content :`<p>
+//                 This is the content of my first article. This is the content of my first article
+//                  </p>`
+//},
 'article-two' : {
     title : 'Article Two | Gauravjeet',
     heading : 'Article two',
