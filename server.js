@@ -4,6 +4,8 @@ var path = require('path');
 
 
 var Pool = require('pg').Pool;
+var crypto = require('crypto');
+
 var config = {
     user: 'gauravjeetchhabra',
     database: 'gauravjeetchhabra',
@@ -25,15 +27,15 @@ var articles = {
 //                 This is the content of my first article. This is the content of my first article
 //                  </p>`
 //},
-'article-two' : {
-    title : 'Article Two | Gauravjeet',
-    heading : 'Article two',
-    date : 'August 20, 2017',
-    content :`<p>
-                This is the content of my second article. This is the content of my  article
+// 'article-two' : {
+//     title : 'Article Two | Gauravjeet',
+//     heading : 'Article two',
+//     date : 'August 20, 2017',
+//     content :`<p>
+//                 This is the content of my second article. This is the content of my  article
                  
-            </p>`
-              },
+//             </p>`
+//               },
 'article-three' : {
     title : 'Article three | Gauravjeet',
     heading : 'Article three',
@@ -94,6 +96,19 @@ return htmlTemplate;
 app.get('/', function (req, res) {
 res.sendFile(path.join(__dirname, 'ui', 'index.html'));
 });
+
+function hash (input,salt){
+    //How do we create a hash ?
+    var hashed =crypto.pbkdf2Sync(input, salt, 10000, 512,'sha512');
+    return hashed.toString('hex');
+    
+    
+}
+app.get('/hash/:input',function(req , res){
+    var hashedString = hash(req.params.input, 'this-is-some-random-string');
+    res.send(hashedString);
+});
+
 
 var pool = new Pool(config);
 app.get('/test', function (req, res){
