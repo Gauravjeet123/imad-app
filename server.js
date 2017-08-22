@@ -151,12 +151,13 @@ app.post('/login',function(req,res){
                // match the password
                var dbString = result.rows[0].password;
                var salt =dbString.split('$')[2];
-               var hasedPassword = hash(password , salt); // Creatind a hashed based on the password submitted and the original salt
+               var hasedPassword = hash(password , salt); // Creating a hashed based on the password submitted and the original salt
                if (hasedPassword == dbString){
                    
                    
                    // set a session
-                   req.session.auth = { userId: result.rows[0].id};
+                 //  You have to set session before you send a response to client
+                   req.session.auth = { userId: result.rows[0].id}; // we have to first set a session value before sending the response
                    res.send('credentials correct!');
                    //set a cookie with session id( that is generted randomly)
                     // internally on  the server side, it will maps the session id to an object
@@ -178,6 +179,11 @@ app.get('/check-login',function(req, res){
     }else{
         res.send('you are not logged in');
     }
+});
+
+app.get('/logout', function(req , res){
+    delete req.session.auth;
+    res.send('Logged out');
 });
 
 
